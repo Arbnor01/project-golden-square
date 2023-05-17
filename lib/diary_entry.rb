@@ -14,7 +14,6 @@ class DiaryEntry
 
   def count_words
     @contents.split(" ").length
-    # Returns the number of words in the contents as an integer
   end
 
   def reading_time(wpm) # wpm is an integer representing the number of words the

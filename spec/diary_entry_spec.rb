@@ -12,6 +12,11 @@ RSpec.describe DiaryEntry do
       diary_entry = DiaryEntry.new("my_title", "some contents here")
       expect(diary_entry.count_words).to eq 3
     end
+
+    it "returns zero when contents is empty" do
+      diary_entry = DiaryEntry.new("my_title", "")
+      expect(diary_entry.count_words).to eq 0
+    end
   end
 end
 
