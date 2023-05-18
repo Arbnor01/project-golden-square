@@ -17,7 +17,7 @@ end
     end
 
     context "given two tasks" do
-        xit "has both task in the list" do
+        it "has both task in the list" do
             todo_list = TodoList.new
             todo_list.add("Wash the car")
             todo_list.add("Wash the dog")
