@@ -36,10 +36,10 @@ end
     end
 
     context "when we try to complete a non existing tasks" do
-        xit "fails" do
+        it "fails" do
             todo_list = TodoList.new
             todo_list.add("Wash the car")
-            expect{ todo_list.complete("Wash the sheep") }.to_raise error "No such task"
+            expect{ todo_list.complete("Wash the sheep") }.to raise_error "No such task"
         end
     end
 end

@@ -8,6 +8,7 @@ class TodoList
   end
 
   def complete(task)
+    fail "No such task" unless @task.include? task
     @task.delete(task)
   end
 
