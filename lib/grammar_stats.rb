@@ -1,10 +1,12 @@
 class GrammarStats
   def initialize
     @check = true
+    @percentage = percentage_good
 
   end
 
   def check(text) # text is a string
+    fail "Error: no text found" if text.empty?
     first_character = text[0]
     last_character = text[-1]
 

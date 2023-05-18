@@ -7,6 +7,11 @@ RSpec.describe GrammarStats do
       expect(stats.check("This sentence should pass.")).to eq(true)
     end
   end
+
+  it "return a empty string" do
+    stats = GrammarStats.new
+    expect {stats.check("")}.to raise_error "Error: no text found"
+  end
 end
 
 
