@@ -3,7 +3,7 @@ class Music
   @track = []
   end
 
-  def list_track
+  def list
     @track
   end
 end
