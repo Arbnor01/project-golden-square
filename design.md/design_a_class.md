@@ -63,38 +63,10 @@ todo_list.list # => ["Wash the dog"]
 # 5
 todo_list = TodoList.new 
 todo_list.add("Wash the car")
-todo_list.add("Wash the dog")
-todo_list.complete("Wash the car)
-todo_list.list # => ["Wash the dog"]
+todo_list.complete("Wash the sheep)
+todo_list.list # => fails "no such task"
 
 ## Implement the Behaviour
-class TodoList
-def initialize
-@tasks = []
-end
-
-def add_task(task)
-@tasks << task
-end
-
-def view_tasks
-return "No tasks" if @tasks.empty?
-
-ruby
-Copy code
-tasks_string = ""
-@tasks.each_with_index do |task, index|
-  tasks_string += "#{index + 1}. #{task}\n"
-end
-tasks_string
-end
-
-def complete_task(task)
-@tasks.delete(task)
-end
-end
-
-Run the tests and make sure they pass
 
 
 
