@@ -26,7 +26,7 @@ end
     end
 
     context "when we complete a tasks" do
-        xit "removes the task from the list" do
+        it "removes the task from the list" do
             todo_list = TodoList.new
             todo_list.add("Wash the car")
             todo_list.add("Wash the dog")
