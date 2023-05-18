@@ -16,5 +16,16 @@ RSpec.describe Music do
         expect(music_tracks.list).to eq ["dont stop me now"]
         end
       end
+
+      context "given more track" do
+        it "returns the list of tracks added" do
+          music_tracks = Music.new
+          music_tracks.add("dont stop me now")
+          music_tracks.add("dandelions")
+          music_tracks.add("otra luna")
+          music_tracks.add("I code all night")
+          expect(music_tracks.list).to eq ["dont stop me now", "dandelions", "otra luna", "I code all night"]
+          end
+      end
   end
 end 
