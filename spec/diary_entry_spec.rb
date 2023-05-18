@@ -59,6 +59,14 @@ RSpec.describe DiaryEntry do
         chunk = diary_entry.reading_chunk(2, 1)
         expect(chunk).to eq "three"
       end
+
+      it "restarts after readong the whole contents" do
+        diary_entry = DiaryEntry.new("my_title", "one two three")
+        diary_entry.reading_chunk(2, 1)
+        diary_entry.reading_chunk(2, 1)
+        chunk = diary_entry.reading_chunk(2, 1)
+        expect(chunk).to eq "one two"
+      end
     end
   end
 end
