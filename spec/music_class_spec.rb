@@ -8,5 +8,13 @@ RSpec.describe Music do
       expect(music_tracks.list).to eq []
       end
     end
-  end 
-end
+
+    context "given a track" do
+      it "adds a new track" do
+        music_tracks = Music.new
+        music_tracks.add("dont stop me now")
+        expect(music_tracks.list).to eq ["dont stop me now"]
+        end
+      end
+  end
+end 

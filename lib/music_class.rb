@@ -6,4 +6,8 @@ class Music
   def list
     @track
   end
+
+  def add(track)
+    @track << track
+  end
 end
