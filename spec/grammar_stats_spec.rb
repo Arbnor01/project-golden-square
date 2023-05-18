@@ -12,6 +12,18 @@ RSpec.describe GrammarStats do
     stats = GrammarStats.new
     expect {stats.check("")}.to raise_error "Error: no text found"
   end
+
+  describe "#percentage_good" do
+    it "returns the correct percentage" do
+      stats = GrammarStats.new
+      stats.check("This sentence should pass.")
+      stats.check("Hello, world.")
+      stats.check("this one fails")
+      stats.check("Another passing sentence.")
+
+      expect(stats.percentage_good).to eq(75)
+    end
+  end
 end
 
 
