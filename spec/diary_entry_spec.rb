@@ -67,6 +67,14 @@ RSpec.describe DiaryEntry do
         chunk = diary_entry.reading_chunk(2, 1)
         expect(chunk).to eq "one two"
       end
+
+      it "restarts if it finishes exactly on the end" do
+        diary_entry = DiaryEntry.new("my_title", "one two three")
+        diary_entry.reading_chunk(2, 1)
+        diary_entry.reading_chunk(1, 1)
+        chunk = diary_entry.reading_chunk(2, 1)
+        expect(chunk).to eq("one two")
+      end
     end
   end
 end
