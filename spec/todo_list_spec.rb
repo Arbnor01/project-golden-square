@@ -9,7 +9,7 @@ RSpec.describe TodoList do
 end
 
     context "given a task" do
-        xit "has the task the list" do
+        it "has the task the list" do
             todo_list = TodoList.new
             todo_list.add("Wash the car")
             expect(todo_list.list).to eq ["Wash the car"]
