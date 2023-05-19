@@ -13,9 +13,16 @@ RSpec.describe DiaryEntry do
       expect(diary_entry.count_words).to eq(0)
     end
 
+  describe "#count words" do
+    it "returns one if the content one word " do
+        diary_entry= DiaryEntry.new("my title", "one")
+        expect(diary_entry.count_words).to eq 1
+    end
+
     it "counts the number of words in the contents" do
       diary_entry = DiaryEntry.new("my_title", "one two three four")
       expect(diary_entry.count_words).to eq(4)
     end
   end
+end
 end
